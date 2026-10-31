@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --paper: #f7f5ee;
+  --ink: #292b23;
+  --muted: #77786c;
+  --green: #47694d;
+  --green-dark: #34543a;
+  --lime: #d7ed9f;
+  --line: #e8e6dc;
+  --orange: #e7784b;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 86% 9%, rgba(231, 120, 75, .08), transparent 25rem),
+    var(--paper);
+}
+
+.topbar {
+  height: 76px;
+  padding: 0 max(6.5vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(41, 43, 35, .08);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.topbar-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .01em;
+}
+
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #8daf67; }
+
+main { width: min(940px, calc(100% - 48px)); margin: 0 auto; }
+
+.intro {
+  min-height: 328px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 6.5% 42px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.intro h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(43px, 6vw, 66px);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: .99;
+}
+
+.intro h1 span { color: var(--green); font-style: italic; }
+
+.intro-description {
+  max-width: 330px;
+  margin: 19px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.illustration {
+  position: relative;
+  width: 200px;
+  height: 190px;
+  margin: 4px 10px 0 30px;
+  display: grid;
+  place-items: center;
+}
+
+.plate {
+  width: 148px;
+  height: 148px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fffefa;
+  box-shadow: 0 13px 35px rgba(70, 73, 51, .12), inset 0 0 0 1px rgba(41, 43, 35, .06);
+  transform: rotate(-12deg);
+}
+
+.plate-inner {
+  position: relative;
+  width: 109px;
+  height: 109px;
+  border: 2px solid #e8b47e;
+  border-radius: 50%;
+  background: #f4d293;
+}
+
+.food-dot { position: absolute; width: 17px; height: 17px; border-radius: 50%; background: var(--orange); }
+.dot-one { top: 24px; left: 23px; }
+.dot-two { top: 52px; left: 61px; width: 13px; height: 13px; background: #6b894e; }
+.dot-three { top: 64px; left: 35px; width: 10px; height: 10px; background: #b94d38; }
+.food-leaf { position: absolute; top: 27px; left: 50px; color: #557a47; font-size: 35px; transform: rotate(-50deg); }
+.spark { position: absolute; z-index: 1; color: var(--orange); }
+.spark-one { top: 8px; right: 30px; font-size: 27px; }
+.spark-two { bottom: 31px; left: 8px; color: #91a960; font-size: 23px; }
+.illustration-caption { position: absolute; bottom: 0; color: var(--muted); font-family: "Playfair Display", Georgia, serif; font-size: 13px; font-style: italic; }
+
+.recipe-card {
+  padding: 35px 7% 29px;
+  border: 1px solid rgba(41, 43, 35, .07);
+  border-radius: 15px;
+  background: #fffefa;
+  box-shadow: 0 14px 40px rgba(49, 52, 40, .055);
+}
+
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.selector-copy { width: min(390px, 100%); }
+.selector-copy label { display: block; margin-bottom: 10px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+.select-wrap { position: relative; }
+
+select {
+  width: 100%;
+  min-height: 53px;
+  appearance: none;
+  padding: 0 46px 0 17px;
+  border: 1px solid #dcded3;
+  border-radius: 7px;
+  outline: none;
+  color: var(--ink);
+  background: #fffefa;
+  font: 600 15px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(71, 105, 77, .12); }
+select:disabled { color: var(--muted); cursor: wait; }
+.select-chevron { position: absolute; top: 12px; right: 17px; color: var(--green); font-size: 21px; pointer-events: none; }
+.help-text { margin: 8px 0 0; color: #969589; font-size: 11px; }
+
+.recipe-stamp {
+  width: 77px;
+  height: 77px;
+  margin: 3px 4px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce5ce;
+  border-radius: 50%;
+  color: var(--green);
+  background: #f5f8ee;
+  transform: rotate(9deg);
+}
+
+.recipe-stamp span { font-size: 7px; font-weight: 700; letter-spacing: .18em; }
+.recipe-stamp strong { margin: 3px 0; font-size: 10px; line-height: 1.05; letter-spacing: .08em; text-align: center; }
+.card-divider { height: 1px; margin: 28px 0 26px; background: var(--line); }
+.ingredients-heading { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 16px; }
+.heading-eyebrow { margin-bottom: 5px; font-size: 9px; }
+
+.ingredients-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.ingredient-count {
+  margin-bottom: 4px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: var(--green-dark);
+  background: #edf3e3;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.status-message { margin: 18px 0 11px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.status-message:empty { display: none; }
+.status-message.is-error { color: #a63e2b; }
+.ingredients-content[hidden] { display: none; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+thead { color: var(--muted); background: #f7f7f1; }
+th { padding: 11px 15px; font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+th:last-child, td:last-child { width: 28%; text-align: right; }
+td { padding: 12px 15px; border-bottom: 1px solid #efeee8; font-size: 13px; }
+tbody tr:last-child td { border-bottom: 0; }
+td:last-child { color: var(--green-dark); font-weight: 700; font-variant-numeric: tabular-nums; }
+.table-note { margin: 16px 0 0; color: #8d8d80; font-size: 10px; }
+.table-note span { margin-right: 5px; color: var(--orange); }
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 4px 30px;
+  color: #858579;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.page-footer span:last-child { font-family: "Playfair Display", Georgia, serif; font-size: 12px; font-style: italic; letter-spacing: 0; }
+
+@media (max-width: 600px) {
+  .topbar { height: 64px; }
+  .topbar-note { font-size: 10px; }
+  main { width: min(100% - 32px, 480px); }
+  .intro { min-height: 272px; padding: 35px 4% 29px; }
+  .intro h1 { font-size: clamp(37px, 8.5vw, 46px); }
+  .intro-description { max-width: 250px; margin-top: 13px; font-size: 12px; }
+  .illustration { width: 105px; height: 120px; margin: 0 0 10px 4px; transform: scale(.72); transform-origin: center right; }
+  .illustration-caption { display: none; }
+  .plate { width: 136px; height: 136px; }
+  .recipe-card { padding: 25px 6% 23px; }
+  .recipe-stamp { width: 61px; height: 61px; margin-left: 9px; }
+  .recipe-stamp strong { font-size: 8px; }
+  .card-divider { margin: 23px 0; }
+  .ingredients-heading h2 { font-size: 27px; }
+  .page-footer { align-items: flex-start; flex-direction: column; padding: 19px 3px 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

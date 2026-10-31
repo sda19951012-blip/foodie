@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ee">
+    <meta name="description" content="Find the ingredients you need for a favorite family recipe.">
+    <title>Good Things — Recipe Ingredients</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AB%92%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Good Things home">
+        <span class="brand-mark" aria-hidden="true">g.</span>
+        <span>good things</span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> A little kitchen inspiration</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span aria-hidden="true">✳</span> FROM OUR RECIPE BOOK</p>
+          <h1 id="page-title">Something<br><span>good is cooking.</span></h1>
+          <p class="intro-description">Pick a recipe and get everything you need, all in one place.</p>
+        </div>
+        <div class="illustration" aria-hidden="true">
+          <span class="spark spark-one">✳</span>
+          <span class="spark spark-two">✦</span>
+          <span class="plate"><span class="plate-inner"><span class="food-dot dot-one"></span><span class="food-dot dot-two"></span><span class="food-dot dot-three"></span><span class="food-leaf">⌁</span></span></span>
+          <span class="illustration-caption">made with a little love</span>
+        </div>
+      </section>
+
+      <section class="recipe-card" aria-labelledby="ingredients-title">
+        <div class="card-top">
+          <div class="selector-copy">
+            <label for="recipe-select">WHAT ARE WE MAKING?</label>
+            <div class="select-wrap">
+              <select id="recipe-select" disabled aria-describedby="recipe-help">
+                <option>Loading recipes…</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </div>
+            <p id="recipe-help" class="help-text">Choose a dish to see its ingredients.</p>
+          </div>
+          <div class="recipe-stamp" aria-hidden="true"><span>THE</span><strong>GOOD<br>STUFF</strong><span>✳</span></div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="ingredients-heading">
+          <div>
+            <p class="eyebrow heading-eyebrow">YOUR SHOPPING LIST</p>
+            <h2 id="ingredients-title">Ingredients</h2>
+          </div>
+          <span id="ingredient-count" class="ingredient-count" aria-live="polite"></span>
+        </div>
+        <p id="status-message" class="status-message" role="status" aria-live="polite">Loading your recipes…</p>
+        <div id="ingredients-content" class="ingredients-content" hidden>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Ingredient</th><th scope="col">Amount</th></tr>
+              </thead>
+              <tbody id="ingredient-rows"></tbody>
+            </table>
+          </div>
+          <p class="table-note"><span aria-hidden="true">✳</span> Amounts are shown just as they appear in the recipe book.</p>
+        </div>
+      </section>
+
+      <footer class="page-footer"><span>GOOD FOOD, GOOD COMPANY.</span><span>✳ &nbsp; Pick a recipe and let’s get cooking.</span></footer>
+    </main>
+  </body>
+</html>
